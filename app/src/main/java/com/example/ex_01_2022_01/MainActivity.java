@@ -1,10 +1,10 @@
-// Example 1 - TC2024 2022
+// Example 1 - TC2024 2022 - Basic activity and Object managers.
 // By Luis Corral
 
-// This is the package we defined in the app wizard
+// This is the package we defined in the app wizard.
 package com.example.ex_01_2022_01;
 
-// These are the imports that are required to bring on several classes used in our code
+// These are the imports that are required to bring on several classes used in our code.
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -13,8 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-// This is the definition of the activity class. The name must be the same than our file
-// name (MainActivity.java). Please notice that this class inherits (extends) AppCompatActivity
+// This is the definition of the activity class. The name must be the same than our file name
+// (MainActivity.java). Please notice that this class inherits (extends) AppCompatActivity class.
 public class MainActivity extends AppCompatActivity {
 
     // The following attributes are the definition of our object managers. They correspond to the
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         // In the following lines, we assign the object manager to the effective widget in the
         // layout file. Always consider that views in the XML file bear a name. This name is
-        // used here to create the association between the XML file and the java Object manager.
+        // used here to create the association between the XML file and the Java object manager.
         buttonOM =  findViewById(R.id.myButton);
         editTextOM = findViewById(R.id.myInputText);
         textViewOM = findViewById(R.id.myTextView);
@@ -46,17 +46,19 @@ public class MainActivity extends AppCompatActivity {
         buttonOM.setOnClickListener(new View.OnClickListener() {
 
             // Many views may hold an onClick method. For this reason, the override
-            // annotation is needed
+            // annotation is needed.
             @Override
             // This is the method that effectively defines what the view does when clicked
             public void onClick(View view) {
                String myTxt = "";
-               // When the button is clicked, we extract the value of the EditText view, and since
-               // the getText method returns an Editable object, we do the toString callback.
+               // When the button is clicked, we extract the value of the EditText view. Due to
+               // encapsulation and information hiding, we cannot access directly the attribute.
+               // Instead, we need to use an access method. Note that such method (getText) returns
+               // an Editable object, for this reason, we need to execute the toString callback.
                myTxt = editTextOM.getText().toString();
 
-               // Due to encapsulation principles, if we want to assign a value to the attribute of
-               // an object, we use a method instead.
+               // Similar than above, due to encapsulation principles, if we want to assign
+               // a value to the attribute of an object, we bundle the value using a method.
                textViewOM.setText(myTxt);
 
             }
