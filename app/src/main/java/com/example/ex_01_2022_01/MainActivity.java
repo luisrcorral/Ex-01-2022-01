@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         // In the following lines, we assign the object manager to the effective widget in the
         // layout file. Always consider that views in the XML file bear a name. This name is
-        // used here to create the association between the XML file and the Java object manager.
+        // used here to bind the association between the XML file and the Java object manager.
         buttonOM =  findViewById(R.id.myButton);
         editTextOM = findViewById(R.id.myInputText);
         textViewOM = findViewById(R.id.myTextView);
